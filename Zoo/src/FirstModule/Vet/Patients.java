@@ -4,9 +4,10 @@ import java.util.LinkedList;
 
 public class Patients {
 
-    private LinkedList<Patient> patients = new LinkedList<>();
+    private final LinkedList<Patient> patients;
 
     public Patients() {
+        this.patients = new LinkedList<>();
     }
 
     public void addNewPatient(Patient patient){
@@ -18,7 +19,7 @@ public class Patients {
         patients.remove(patient);
     }
 
-    public int countingPatients(){
+    public int getAmountOfPatients(){
         return patients.size();
     }
 

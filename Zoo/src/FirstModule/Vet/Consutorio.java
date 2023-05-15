@@ -15,7 +15,7 @@ public class Consutorio {
            System.out.println("To quit system please write: 'quit'");
 
 
-           System.out.format("There are %d patients ahead\n", patientsList.countingPatients() );
+           System.out.format("There are %d patients ahead\n", patientsList.getAmountOfPatients() );
            System.out.println("Do you want to stay (yes, no)? ");
 
            String response = sc.nextLine();
@@ -45,10 +45,6 @@ public class Consutorio {
                System.out.println("Please, give a brief description of its condition: ");
                String description = sc.nextLine();
 
-//            System.out.println("Type: " + typeOfPet);
-//            System.out.println("Age: " + age + " months");
-//            System.out.println("Description: " + description);
-
                Patient patient = new Patient(petName, ownerName, typeOfPet,age);
                patient.setProblemDescription(description);
                System.out.println();
@@ -57,7 +53,7 @@ public class Consutorio {
                patientsList.addNewPatient(patient);
                System.out.println();
 
-               System.out.format("You are number %d of a line of %d \n", patientsList.getIndex(patient), patientsList.countingPatients());
+               System.out.format("You are number %d of a line of %d \n", patientsList.getIndex(patient), patientsList.getAmountOfPatients());
 
                //System.out.println("Is the data correct (yes / no)?");
 
