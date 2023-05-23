@@ -29,20 +29,12 @@ public class Patient {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getOwnerName() {
         return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
-    }
-
-    public FirstModule.Vet.Animal getTypeOfPet() {
-        return typeOfPet;
     }
 
     public void setTypeOfPet(String typeOfPet) {
@@ -107,7 +99,7 @@ public class Patient {
         return "Patient Data: \n" +
                 "name: " + name + '\n' +
                 "ownerName: " + ownerName + '\n' +
-                "specie: " + typeOfPet + '\n' +
+                "specie: " + animal.typeOfAnimal + '\n' +
                 "isTreatmentPayed: " + isTreatmentPayed + '\n' +
                 "problemDescription: " + problemDescription + '\n' +
                 "treatment: " + treatment + '\n' +
