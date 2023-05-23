@@ -1,9 +1,10 @@
-package FirstModule.Vet;
+package FirstModule.Vet.Models;
 
 public class Patient {
     private String name;
     private String ownerName;
-    private Animal typeOfPet;
+    private Animal animal;
+    private FirstModule.Vet.Animal typeOfPet;
     private Boolean isTreatmentPayed = false;
     private String problemDescription;
     private String treatment;
@@ -18,6 +19,10 @@ public class Patient {
         this.ownerName = ownerName;
         this.setTypeOfPet(typeOfPet);
         this.age = age;
+    }
+
+    public Animal getAnimal() {
+        return animal;
     }
 
     public String getName() {
@@ -36,29 +41,29 @@ public class Patient {
         this.ownerName = ownerName;
     }
 
-    public Animal getTypeOfPet() {
+    public FirstModule.Vet.Animal getTypeOfPet() {
         return typeOfPet;
     }
 
     public void setTypeOfPet(String typeOfPet) {
         switch (typeOfPet.toUpperCase()){
             case "CAT":
-                this.typeOfPet = Animal.CAT;
+                this.animal = new Cat(this.name, typeOfPet);
                 break;
             case "DOG":
-                this.typeOfPet = Animal.DOG;
+                this.animal = new Dog(this.name, typeOfPet);
                 break;
             case "FISH":
-                this.typeOfPet = Animal.FISH;
+                this.animal = new Fish(this.name, typeOfPet);
                 break;
             case "HAMNSTER":
-                this.typeOfPet = Animal.HAMNSTER;
+                this.animal = new Hamster(this.name, typeOfPet);
                 break;
             case "MOUSE":
-                this.typeOfPet = Animal.MOUSE;
+                this.animal = new Mouse(this.name, typeOfPet);
                 break;
             case "BIRD":
-                this.typeOfPet = Animal.BIRD;
+                this.animal = new Bird(this.name, typeOfPet);
                 break;
             default:
                 break;

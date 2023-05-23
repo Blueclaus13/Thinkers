@@ -1,11 +1,17 @@
 package FirstModule.Vet;
 
+import FirstModule.Vet.Models.Animal;
+import FirstModule.Vet.Models.Patient;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Consutorio {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Patients patientsList = new Patients();
+        ArrayList<String> typeOfAnimals = new ArrayList<>(Arrays.asList("dog", "cat", "hamster", "bird", "fish", "mouse"));
 
 
        while(true){
@@ -34,11 +40,16 @@ public class Consutorio {
                String petName = sc.nextLine();
 
                System.out.print("What kind of pet is?: ");
+               String typeOfPet;
+               //Validation
+               do {
+                   System.out.println("\nOptions:\n Dog,\n Cat,\n Hamster,\n Bird,\n Fish,\n Mouse\n ");
+                   typeOfPet = sc.nextLine();
 
-               System.out.println("Options: Dog, Cat, Hamster, Bird, Fish, Mouse ");
-               String typeOfPet = sc.nextLine();
+               }while (!typeOfAnimals.contains(typeOfPet.toLowerCase()));
 
-               System.out.print("How old is it? unit: months ");
+
+               System.out.print("How old is it? (unit: months) ");
                int age = sc.nextInt();
                sc.nextLine();
 
@@ -60,6 +71,12 @@ public class Consutorio {
 
            }else{
                System.out.println("Ok, thank you for coming. Have a good Day!");
+           }
+
+           for (Patient patient: patientsList.getPatients()){
+               Animal animal = patient.getAnimal();
+               animal.printName();
+               animal.eat();
            }
        }
        sc.close();

@@ -1,5 +1,7 @@
 package FirstModule.Vet;
 
+import FirstModule.Vet.Models.Patient;
+
 import java.util.LinkedList;
 
 public class Patients {
@@ -25,6 +27,10 @@ public class Patients {
 
     public int getIndex(Patient patient){
         return patients.indexOf(patient) + 1;
+    }
+
+    public LinkedList<Patient> getPatients() {
+        return patients;
     }
 
     @Override
